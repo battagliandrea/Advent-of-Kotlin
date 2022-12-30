@@ -10,3 +10,10 @@ fun String.readLines(): List<String> =
         listOf()
     }
 
+fun String.readText(): String =
+    try{
+        File("src/main/resources/$this").bufferedReader().readText()
+    } catch (e: FileNotFoundException){
+        ""
+    }
+
